@@ -88,6 +88,7 @@ def UserMessage():
                 SendMessage('BOT','Partido no encontrado')
 
         if Comando[0].Lexeme == 'JORNADA':
+            SendMessage('BOT','Generando archivo de resultados jornada {} temporada {}'.format(Comando[1].Lexeme, Comando[3].Lexeme))
             JornadaList = []
             for Partido in PartidosList:
                 if Partido.Temp == Comando[3].Lexeme and Partido.Journey == Comando[1].Lexeme:
@@ -115,6 +116,7 @@ def UserMessage():
 
 
         if Comando[0].Lexeme == 'TABLA':
+            SendMessage('BOT','Generando archivo de clasificación de temporada {}'.format(Comando[2].Lexeme))
             TablaList = []
             for Partido in PartidosList:
                 PointsL = 0 
@@ -158,6 +160,8 @@ def UserMessage():
             html_file.write(template.render(nombre= nombre, TablaList = TablaList))
             html_file.close()
             startfile(FileName)
+    else:
+        SendMessage('BOT','Se ha producido un error en el comando, revisar el log de errores')
 
 def bubble_sort_UP(data):
     for i in range(len(data) - 1):
