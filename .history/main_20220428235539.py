@@ -163,7 +163,7 @@ def UserMessage():
             startfile(FileName)
         if Comando[0].Lexeme == 'ADIOS':
             SendMessage('BOT','Gracias por utilizar este programa')
-        
+            
     else:
         SendMessage('BOT','Se ha producido un error en el comando, revisar el log de errores')
 

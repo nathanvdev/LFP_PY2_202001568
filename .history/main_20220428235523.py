@@ -2,7 +2,6 @@
 from os import startfile
 from tkinter import *
 import webbrowser
-import sys
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import CSV, Analizador, Objects
@@ -163,7 +162,7 @@ def UserMessage():
             startfile(FileName)
         if Comando[0].Lexeme == 'ADIOS':
             SendMessage('BOT','Gracias por utilizar este programa')
-        
+            
     else:
         SendMessage('BOT','Se ha producido un error en el comando, revisar el log de errores')
 
